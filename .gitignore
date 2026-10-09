@@ -1,0 +1,4 @@
+# Real manifest is machine-specific (same pattern as .env).
+Stowfile
+*.log
+.DS_Store

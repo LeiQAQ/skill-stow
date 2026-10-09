@@ -1,0 +1,22 @@
+# skill-stow example manifest — copy to `Stowfile` and edit.
+# The real Stowfile is machine-specific: add it to .gitignore.
+#
+# Format ('#' starts a comment, fields separated by whitespace):
+#   target <name> <path>          an agent's skills folder
+#   source <name> <path>          where skills really live
+#   mount  <target> <source> <skill> [skill ...]
+
+target workbuddy   ~/.workbuddy/skills
+target claude      ~/.claude/skills
+
+source main        ~/.codex/skills
+source superpowers ~/.codex/superpowers/skills
+
+# keep both agents in sync on shared thinking skills
+mount workbuddy claude superpowers  brainstorming verifying systematic-debugging
+
+# workbuddy-only presentation skills
+mount workbuddy main  lesson-plan-to-ppt map-timeline-courseware
+
+# claude-only writing skills
+mount claude main  human-writing khazix-writer
